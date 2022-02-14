@@ -1,0 +1,280 @@
+(function() {
+
+  function insertScript(content, type, id) {
+    var s = document.createElement('script');
+    var body = document.querySelector('body');
+    s.type = type;
+    if (id) {
+      s.id = id;
+    }
+    s.innerText = content;
+    body.appendChild(s);
+  }
+
+  function insertCSS(content) {
+    var sheet = document.createElement('style');
+    var head = document.querySelector('head');
+    sheet.type = 'text/css';
+
+    sheet.innerText = content;
+    head.appendChild(sheet);
+  }
+
+
+
+
+insertCSS('/* ------WIDTH OF PRODUCT CARD------*/' + 
+'.df-embedded .df-results {' + 
+'grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;' + 
+'}' + 
+'/* ------TIPO DE LETRA------*/' + 
+'.df-classic, .df-fullscreen, df-fullscreen * {' + 
+'font-family: din-2014, sans-serif !important;' + 
+'font-weight:  500;' + 
+'}' + 
+'/* ------MAIN BACKGROUND------*/' + 
+'.df-results, .df-fullscreen .df-card, .df-classic .df-card, .df-fullscreen, .df-aside, .df-topbar, .df-fullscreen .df-header, .df-classic .df-header, .df-classic  {' + 
+'background-color: #FFFFFF !important;' + 
+'}' + 
+'/* ---QUICK CHANGE FOR' + 
+'FACET TITLE' + 
+'SUGGESTIONS' + 
+'PRODUCT-CARD:HOVER' + 
+'TERMS:HOVER' + 
+'DATA SELECTED--*/' + 
+'.df-panel__title, .df-classic .df-panel__title, .df-suggestion {' + 
+'background-color: #d05d18 !important;' + 
+'color: white !important;' + 
+'}' + 
+'.df-panel__title:hover, .df-classic .df-suggestion:hover, .df-fullscreen .df-suggestion:hover {' + 
+'background-color: white !important;' + 
+'color: #d05d18 !important;' + 
+'}' + 
+'.df-classic .df-card:hover, .df-fullscreen .df-card:hover, .df-embedded .df-card:hover {' + 
+'background-color: #d05d18 !important;' + 
+'margin: 6px;' + 
+'}' + 
+'.df-term:hover, .df-term:hover .df-term__count {' + 
+'background-color: white!important;' + 
+'color: #d05d18 !important;' + 
+'}' + 
+'.df-classic .df-term[data-selected], .df-fullscreen .df-term[data-selected], .df-classic .df-term[data-selected] .df-term__count, .df-fullscreen .df-term[data-selected] .df-term__count, .df-selected-filters .df-selected-filters__content .df-selected-filters:hover {' + 
+'background-color: #d05d18 !important;' + 
+'border-color: #d05d18 !important;' + 
+'color: white !important;' + 
+'}' + 
+'/* ----------------------------------------------------------------------------------------------------------------------------------------------------REST OF CHANGES--------------------------------------------------------------------------------------------------------------------------------------*/' + 
+'/* ------GENERAL------*/' + 
+'.df-results, .df-results__embedded {' + 
+'padding: 2px !important;' + 
+'}' + 
+'.df-fullscreen {' + 
+'margin-top: 40px !important;' + 
+'}' + 
+'.df-embedded {' + 
+'margin: 20px !important;' + 
+'text-decoration: none !important;' + 
+'}' + 
+'/* ------SUGGESTIONS------*/' + 
+'.df-suggestion-label {' + 
+'display: none !important;' + 
+'}' + 
+'.df-suggestions-list {' + 
+'border-bottom: 1px solid transparent !important;' + 
+'}' + 
+'.df-suggestion {' + 
+'background-color: #BFD72F;' + 
+'box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;' + 
+'margin-bottom: 2px;' + 
+'padding: 2px;' + 
+'margin: 3px !important;' + 
+'}' + 
+'/* ---------------- PRODUCT CARD ---------------*/' + 
+'.df-fullscreen .df-card>a, .df-fullscreen .df-card>a:link, .df-fullscreen .df-card>a:visited, .df-embedded .df-card>a, .df-embedded .df-card>a:link, .df-embedded .df-card>a:visited, .df-classic .df-card>a, .df-classic .df-card>a:link, .df-classic .df-card>a:visited {' + 
+'box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;' + 
+'text-decoration: none !important;' + 
+'margin: 4px;' + 
+'border-color: transparent;' + 
+'background-color: white !important;' + 
+'flex: inherit !important;' + 
+'}' + 
+'.df-fullscreen .df-card__title, .df-card__title, .df-classic .df-card__title, .df-card__title  {' + 
+'color: black;' + 
+'flex: inherit !important;' + 
+'font-size: 14px;' + 
+'text-align: initial;' + 
+'font-weight: 500;' + 
+'text-decoration: none !important;' + 
+'margin: 0px 0px 4px 0px;' + 
+'}' + 
+'/* ------------------- FACETS ------------------- */' + 
+'.df-aside, .df-classic .df-aside__content {' + 
+'border-right: 1px solid transparent !important;' + 
+'border-left: 1px solid transparent !important;' + 
+'padding: 0px !important;' + 
+'border-color: transparent !important;' + 
+'}' + 
+'.df-classic .df-selected-filters, .df-mobile .df-selected-filters, .df-panel {' + 
+'border: 1px solid #D8E0E9;' + 
+'background-color: white !important;' + 
+'box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;' + 
+'margin: 0 7px 7px 7px !important;' + 
+'}' + 
+'.df-classic .df-panel__title,  .df-fullscreen .df-panel__title {' + 
+'padding-top: 4px !important;' + 
+'}' + 
+'.df-embedded .df-panel__title {' + 
+'padding-top: 4px !important;' + 
+'}' + 
+'.df-panel__title {' + 
+'font-size: 16px !important;' + 
+'margin: 0 !important;' + 
+'border-bottom: 1px solid #b3b3b3;' + 
+'}' + 
+'.df-term {' + 
+'border-bottom: 1px solid #f2f2f2 !important;' + 
+'margin-left: 20px !important;' + 
+'}' + 
+'/* --------------- LOGO ---------------- */' + 
+'.df-fullscreen .df-topbar__logo img {' + 
+'margin-top: 10px !important;' + 
+'}' + 
+'/* --------------- PRICE ---------------- */' + 
+'.df-card__price.df-card__price--new {' + 
+'color: #d05d18 !important;' + 
+'text-align: initial;' + 
+'font-size: 16px !important;' + 
+'}' + 
+'.df-card__price {' + 
+'color: #888;' + 
+'text-align: initial;' + 
+'font-size: 16px !important;' + 
+'padding-top: 0px !important;' + 
+'}' + 
+'.df-card__pricing {' + 
+'text-align: initial;' + 
+'font-size: 16px !important;' + 
+'}' + 
+'/* --------------- BARRA DE BUSQUEDA ---------------- */' + 
+'.df-fullscreen .df-searchbox input {' + 
+'padding: 0 0 0 20px !important;' + 
+'font-size: 18px !important;' + 
+'}' + 
+'.df-fullscreen .df-searchbox {' + 
+'border-bottom: none !important;' + 
+'background-color: #fafafa !important;' + 
+'}' + 
+'/* --------------- X PARA CERRAR CAPA ---------------- */' + 
+'.df-fullscreen .df-icon {' + 
+'padding-left: 10px !important;' + 
+'}' + 
+'/* --------------- DOOFINDER LOGO ----------------' + 
+'.doofinderLogo {' + 
+'display: none !important;' + 
+'}' + 
+'*/' + 
+'/* --------------- MPN : SKU ---------------- */' + 
+'.df-card__mpn {' + 
+'font-size: 11px !important;' + 
+'color: #757575 !important;' + 
+'font-weight: 400 !important;' + 
+'line-height: 17px !important;' + 
+'text-align: initial;' + 
+'margin-top: 4px;' + 
+'}' + 
+'/* --------------- ADD TO CART BTN ---------------- */' + 
+'.my-df-addtocart-btn {' + 
+'border-radius: 5px;' + 
+'background-color: #FF9900;' + 
+'color: white;' + 
+'cursor: pointer;' + 
+'display: block;' + 
+'font-size: 13px;' + 
+'padding: 7px;' + 
+'width: 100%;' + 
+'font-weight: 700;' + 
+'border: 1px solid transparent !important;' + 
+'}' + 
+'.my-df-addtocart-btn:hover {' + 
+'background-color: black;' + 
+'color: white;' + 
+'}' + 
+'/* ---------------- AVAILABILITY ---------------*/' + 
+'.df-card__availability.in.stock {' + 
+'font-size: 13px !important;' + 
+'color: green;' + 
+'display: block;' + 
+'text-align: initial;' + 
+'font-weight: 500;' + 
+'}' + 
+'.df-card__availability.out.of.stock {' + 
+'color: red;' + 
+'display: block;' + 
+'text-align: initial;' + 
+'font-weight: 500;' + 
+'font-size: 13px !important;' + 
+'}');
+
+
+}());
+
+(function(d,t,u){var f=d.createElement(t),s=d.getElementsByTagName(t)[0];
+f.async=1;f.src=u;f.setAttribute('charset','utf-8');
+s.parentNode.insertBefore(f,s)}(document,'script',[
+  '//cdn.doofinder.com/media/js/doofinder-',
+  ((window.location.pathname + window.location.search).indexOf('/search') > -1) ? 'embedded' : 'classic',
+  '.7.latest.min.js'
+].join('')));
+
+
+var dfClassicLayers = [{
+  "hashid": "702f920a8030b206b0339cac06bbd4f9",
+  "zone": "eu1",
+  "callbacks":{
+      "loaded": (instance) => {
+          document.querySelector("body > header > section > div > div.flex-display.flex-justify-left.d-col-4.header-elements-1.searchbar-d > form > input").addEventListener("keydown", function(e) {
+            if (e.key == 'Enter'){
+            e.preventDefault();
+            var dfQuery = dfClassicLayers[0].layer.controller.query;
+            window.location.href = "/search?search_query=" + dfQuery;
+          }          
+        })
+    }         
+  },      
+  "display": {
+    "lang": "en",
+    "width": "90%",
+    "height": "500px",    
+    "align": "center",
+    "dtop": 40,
+    "facets": {
+      "width": "260px",
+      "attached": "left"
+    }
+  },
+    "queryInput": "input[name='search']",
+    "historyPlugin": true
+}];
+
+var dfEmbeddedLoaded = function(instance) {
+  var query = (doofinder.core.util.qs.parse(
+    window.location.search.substr(1)
+  ).search_query || "").trim();
+  instance.layer.launch(query);
+};
+
+var dfEmbeddedLayers = [{
+  "hashid": "702f920a8030b206b0339cac06bbd4f9",
+  "searchParams": {
+    "rpp": 18
+  }, 
+  "zone": "eu1",
+  "display": {
+    "lang": "en",
+    "insertionPoint": ".main-content-webpage.main-content"
+  },
+  "queryInput": "input[name='search'],body > header > section > div > div.flex-display.flex-justify-left.d-col-4.header-elements-1.searchbar-d > form > input",
+  "callbacks": {
+    "loaded": dfEmbeddedLoaded
+  }
+}];
